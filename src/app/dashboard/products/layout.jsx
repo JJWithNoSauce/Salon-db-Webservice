@@ -1,6 +1,6 @@
 import style from "./products.module.css"
-import List from "/home/jjwithnosauce/Salon-db_nextJS/src/app/ui/stocks/ProductList/ProductList.jsx"
-import Sum from "/home/jjwithnosauce/Salon-db_nextJS/src/app/ui/stocks/ProductList/ProductSum.jsx"
+import List from "/src/app/ui/stocks/ProductList/ProductList.jsx"
+import Sum from "/src/app/ui/stocks/ProductList/ProductSum.jsx"
 
 const Layout = ({children}) => {
     return (
