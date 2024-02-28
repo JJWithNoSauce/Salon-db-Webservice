@@ -1,21 +1,45 @@
-import style from "../dashboard.module.css"
+'use client'
+
+import Link from 'next/link'
+import { redirect } from "next/dist/server/api-utils";
+import style from "./sidebar.module.css"
+import {FaUser,FaBox,FaDatabase} from "react-icons/fa"
+
+const menuItems = [
+    {
+        title: "Dashboard",
+        path: "/dashboard",
+        icon: <FaDatabase />,
+    },
+    {
+        title: "Products",
+        path: "/dashboard/products",
+        icon: <FaBox />,
+    },
+    {
+        title: "Users",
+        path: "/dashboard/users",
+        icon: <FaUser />,
+    },
+];
+
 
 const sidebar = () => {
     return (
         <div className={style.container}>
-        <ul class="menu bg-base-200 w-56 rounded-box">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-            <li><a>Item 3</a></li>
-            <li><a>Item 4</a></li>
-            <li><a>Item 5</a></li>
-            <li><a>Item 6</a></li>
-            <li><a>Item 7</a></li>
-            <li><a>Item 8</a></li>
-            <li><a>Item 9</a></li>
-        </ul>
+            <ul className={style.list}>
+            {menuItems.map((cat) =>(
+                <li key={cat.title}>
+                    <Link href={cat.path}>
+                        <button class="btn btn-ghost text-xl" className={style.cat}>
+                            {cat.icon}{cat.title}
+                        </button>
+                    </Link>
+                </li>
+            ))}
+            </ul>
         </div>
-    )
-}
+    );
+};
 
-export default sidebar
+export default sidebar;
