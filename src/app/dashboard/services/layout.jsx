@@ -1,4 +1,4 @@
-import style from "./products.module.css"
+import style from "./services.module.css"
 
 const Layout = ({children}) => {
     return (
