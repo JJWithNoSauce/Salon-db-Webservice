@@ -18,7 +18,7 @@ const menuItems = [
     },
     {
         title: "Maintain",
-        path: "/dashboard/products/productMaintain",
+        path: "/dashboard/productMaintain",
         icon: <FaBarcode />,
     },
     {
