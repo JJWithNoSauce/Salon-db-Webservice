@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+}
+
+.confirm{
+    flex: 2;
+    padding: 10px;
+}
+
+.content{
+    flex: 3;
+    padding: 10px;
+}
