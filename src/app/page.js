@@ -9,14 +9,6 @@ export default function Homepage() {
     });
   })
 
-  db.then(client => {
-    client.query('select * from Persons', function (err, results, fields) {
-        console.log(results);
-        
-    });
-  })
-
-  
 
   return (
     <main className="Homepage">
