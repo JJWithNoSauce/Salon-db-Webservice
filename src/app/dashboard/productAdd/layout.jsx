@@ -1,7 +1,10 @@
 import style from "./products.module.css"
 import Link from 'next/link'
+import { addProduct } from "@/app/app"
 
-const Layout = ({children}) => {
+ export async function Layout(){
+    'use server'
+
     return (
         <div class="form-control">
             <div>
@@ -14,24 +17,25 @@ const Layout = ({children}) => {
             <div class="divider text-xl">เพิ่มสินค้า</div>
 
             </div>
-            <form className={style.content}>
-                <input type="text" placeholder="Name" class="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="Size" class="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="Type" class="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="Amount" class="input input-bordered w-full max-w-xs" />
-                <input type="text" placeholder="Price" class="input input-bordered w-full max-w-xs" />
+            <form action={addProduct}>
+                <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <input type="text" name="size" placeholder="Size" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <input type="text" name="type" placeholder="Type" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <input type="number" name="amount" placeholder="Amount" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <input type="number" name="price" placeholder="Price" class="input input-bordered w-full max-w-xs" />
+                <br/>
+
+                <button class="btn glass btn-block text-xl" type="submit" href={"/dashboard/productMaintain"}>
+                    Confirm เพิ่มสินค้า
+                </button>
             </form>
 
             <div class="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มสินค้า</div>
 
-
-            <div className={style.confirm}>
-                <Link href={"/dashboard/productMaintain"}>
-                        <button class="btn glass btn-block text-xl">
-                            Confirm เพิ่มสินค้า
-                        </button>
-                </Link>
-            </div>
             <div class="divider"></div>
         </div>
     )
