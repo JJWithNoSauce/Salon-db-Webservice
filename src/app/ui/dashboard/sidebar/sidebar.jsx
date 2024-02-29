@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { redirect } from "next/dist/server/api-utils";
 import style from "./sidebar.module.css"
-import {FaUser,FaBox,FaDatabase,FaBath,FaBarcode} from "react-icons/fa"
+import {FaUser,FaBox,FaDatabase,FaBath,FaBarcode,FaClipboardList} from "react-icons/fa"
 
 const menuItems = [
     {
@@ -25,6 +25,11 @@ const menuItems = [
         title: "Services",
         path: "/dashboard/services",
         icon: <FaBath />,
+    },
+    {
+        title: "Maintain",
+        path: "/dashboard/servicesMaintain",
+        icon: <FaClipboardList />,
     },
     {
         title: "Users",
