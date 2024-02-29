@@ -1,9 +1,11 @@
 import style from "../products.module.css"
+import Lists from "/src/app/ui/stocks/ProductList/Listing.jsx";
+
 const productMaintain = ({params}) => {
     return (
         <div>
              <div class="divider text-xl">รายละเอียดสินค้า</div>
-             
+                
                 <div class="text-xl">{"ชื่อสินค้า : " + params.productName}</div>
                 <div class="text-xl">{"ขนาดสินค้า: " + params.size}</div>
                 <div class="text-xl">{"ประเภทสินค้า : " + params.type}</div>
