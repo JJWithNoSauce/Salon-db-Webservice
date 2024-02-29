@@ -7,9 +7,6 @@ const Layout = ({children}) => {
     return (
         <div className={style.container}>
             <div className={style.content}>
-                Part1
-                {children}
-
                 <div class="divider text-xl">เพิ่มหรือลบรายการสินค้า</div>
 
                 <Link href={"/dashboard/productAdd"}>
@@ -34,9 +31,7 @@ const Layout = ({children}) => {
                 <div class="divider">เลือกรายการเพื่อดูรายละเอียดหรือปรับแต่ง</div>
             </div>
             <div className={style.content}>
-                Part2
                 {children}
-                Pick product to config.
             </div>
         </div>
     )

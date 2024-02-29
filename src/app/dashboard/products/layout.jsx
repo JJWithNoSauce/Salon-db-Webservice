@@ -6,11 +6,9 @@ const Layout = ({children}) => {
     return (
         <div className={style.container}>
             <div className={style.content}>
-                <h>รายการสินค้า</h>
                 <List/>
             </div>
             <div className={style.content}>
-                <h>ยอดรวม</h>
                 <Sum/>
             </div>
         </div>
