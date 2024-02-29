@@ -20,6 +20,7 @@ const Products = [
 const ProductSum = () => {
     return (
         <div>
+            <div class="divider text-xl">ยอดรวม</div>
             <ul>
             {Products.map((cat) =>(
                 <li key={cat.title}>
@@ -28,6 +29,7 @@ const ProductSum = () => {
             ))}
             <button class="btn">Checkout!</button>
             </ul>
+            <div class="divider"></div>
         </div>
     );
 };

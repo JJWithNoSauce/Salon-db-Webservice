@@ -43,22 +43,20 @@ const ProductList = () => {
     return (
         <div className={style.list}>
             <ul>
+            <div class="divider text-xl">รายการสินค้า</div>
             {Products.map((cat) =>(
                 <li key={cat.title}>
-                    <div>
-                        <img src="https://png.pngtree.com/png-clipart/20221211/ourmid/pngtree-shampoo-clipart-png-image_6519245.png" alt="" width="100" height="100"/>
-                    </div>
-                    
                     <button class="btn btn-ghost text-xl">
                         {cat.title}
                     </button>
                     <div>
-                    <button class="btn btn-ghost text-xl">
+                    <button class="btn btn-outline btn-success text-xl">
                         add
                     </button>
-                    <button class="btn btn-ghost text-xl">
+                    <button class="btn btn-outline btn-error text-xl">
                         remove
                     </button>
+                    <div class="divider"></div>
                     </div>
                 </li>
             ))}
