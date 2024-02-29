@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.container div{
+    width: 240px;
+    height: 240px;
+    margin: 30px 15px;
+    background: #333;
+}
+
+.service{
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container div:hover{
+    background: gray;
+}
