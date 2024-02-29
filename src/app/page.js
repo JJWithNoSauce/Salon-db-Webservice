@@ -1,13 +1,9 @@
 import Image from "next/image";
 import { db} from "./db";
+import { addQuery } from "./app";
 
 export default function Homepage() {
-  
-  db().then(client => {
-    client.query('select * from Persons', function (err, results, fields) {
-        console.log(results);
-    });
-  })
+  addQuery()
 
   return (
     <main className="Homepage">
