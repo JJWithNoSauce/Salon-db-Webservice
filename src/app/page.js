@@ -1,14 +1,30 @@
 import Image from "next/image";
+import { db,ssh } from "./db";
 
 export default function Homepage() {
+
+  db.then(client => {
+    client.query('select * from Persons', function (err, results, fields) {
+        console.log(results);
+    });
+  })
+
+  db.then(client => {
+    client.query('select * from Persons', function (err, results, fields) {
+        console.log(results);
+        
+    });
+  })
+
+  
+
   return (
     <main className="Homepage">
       <div>
-        <h>Login</h>
+        <h>hh</h>
       </div> 
-      <input type="text" placeholder="Username" class="input input-bordered w-full max-w-xs" />
-      <input type="text" placeholder="Password" class="input input-bordered w-full max-w-xs" />
-      <button class="btn btn-wide">Login</button>
     </main>
   );
 }
+
+//select * from Persons

@@ -39,7 +39,7 @@ const Products = [
     },
 ]
 
-const ProductList = () => {
+const ProductMaintain = () => {
     return (
         <div className={style.list}>
             <ul>
@@ -52,14 +52,6 @@ const ProductList = () => {
                     <button class="btn btn-ghost text-xl">
                         {cat.title}
                     </button>
-                    <div>
-                    <button class="btn btn-ghost text-xl">
-                        add
-                    </button>
-                    <button class="btn btn-ghost text-xl">
-                        remove
-                    </button>
-                    </div>
                 </li>
             ))}
             </ul>
@@ -67,4 +59,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default ProductMaintain;
