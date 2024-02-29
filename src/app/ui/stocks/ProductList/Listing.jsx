@@ -1,0 +1,88 @@
+const Lists = [
+    {
+        title: "Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 75,
+    },
+    {
+        title: "Soaps",
+        type: "soap product",
+        type: "20 g",
+        amount: 100,
+        price: 75,
+    },
+    {
+        title: "Cool Stuffs",
+        type: "etc product",
+        type: "100 ml",
+        amount: 100,
+        price: 75,
+    },
+    {
+        title: "Very Nice Shampoo",
+        type: "shampoo product",
+        type: "750 ml",
+        amount: 100,
+        price: 75,
+    },
+    {
+        title: "Opera Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 75,
+    },
+    {
+        title: "Morbing Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 90,
+    },
+    {
+        title: "Fillian's Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 80,
+    },
+    {
+        title: "Super Very Nice Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 100,
+    },
+    {
+        title: "Thai Shampoo",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 45,
+    },
+    {
+        title: "Soaping the Soap",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 120,
+    },
+    {
+        title: "Soapy The Soap",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 169,
+    },
+    {
+        title: "This project's ded",
+        type: "shampoo product",
+        type: "750ml",
+        amount: 100,
+        price: 180,
+    },
+]
+
+export default Lists;
