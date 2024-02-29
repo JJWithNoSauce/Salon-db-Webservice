@@ -1,0 +1,19 @@
+.nav{
+    margin: 10px auto;
+    padding: 10px;
+    display: flex;
+    color: black;
+
+}
+
+.nav a{
+    text-decoration: none;
+    margin-left: 50px auto;
+    margin-right: 50px auto;
+    font-size: 25px;
+    padding: 30px;
+}
+
+.nav a:hover{
+    color: orange
+}

@@ -1,11 +1,17 @@
-.list{
-    padding: 0px;
+.container{
+    display: flex;
 }
 
-.sumlist{
+.confirm{
+    flex: 2;
+    padding: 10px;
+}
+
+.content{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex: 3;
     padding: 10px;
 }

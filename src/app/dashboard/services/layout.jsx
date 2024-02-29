@@ -1,14 +1,11 @@
-import style from "./services.module.css"
+import style from "./layout.module.css"
+import Navbar from "./Navbar"
 
 const Layout = ({children}) => {
     return (
         <div className={style.container}>
-            <div className={style.content}>
-                Part1
-                {children}
-            </div>
-            <div className={style.content}>
-                Part2
+            <div>
+                <Navbar/>
                 {children}
             </div>
         </div>
