@@ -1,56 +1,29 @@
 import style from "./productList.module.css"
 
-const Products = [
-    {
-        title: "Shampoo",
-    },
-    {
-        title: "Soaps",
-    },
-    {
-        title: "Cool Stuffs",
-    },
-    {
-        title: "Very Nice Shampoo",
-    },
-    {
-        title: "Opera Shampoo",
-    },
-    {
-        title: "Morbing Shampoo",
-    },
-    {
-        title: "Fillian's Shampoo",
-    },
-    {
-        title: "Super Very Nice Shampoo",
-    },
-    {
-        title: "Thai Shampoo",
-    },
-    {
-        title: "Soaping the Soap",
-    },
-    {
-        title: "Soapy The Soap",
-    },
-    {
-        title: "This project's ded",
-    },
-]
+const ProductList = async () => {
+    const client = await db(); 
+    const results = await new Promise((resolve, reject) => {
+      client.query('SELECT * FROM Product', (error, results, fields) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve(results);
+      });
+    });
+    ssh.close();
 
-const ProductList = () => {
     return (
         <div className={style.list}>
             <ul>
-            {Products.map((cat) =>(
-                <li key={cat.title}>
+            {results.map((cat) =>(
+                <li key={cat.product_name}>
                     <div>
                         <img src="https://png.pngtree.com/png-clipart/20221211/ourmid/pngtree-shampoo-clipart-png-image_6519245.png" alt="" width="100" height="100"/>
                     </div>
                     
                     <button class="btn btn-ghost text-xl">
-                        {cat.title}
+                        {cat.product_name}
                     </button>
                     <div>
                     <button class="btn btn-ghost text-xl">

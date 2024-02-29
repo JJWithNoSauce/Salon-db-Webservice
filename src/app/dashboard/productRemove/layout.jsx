@@ -1,5 +1,6 @@
 import style from "./products.module.css"
 import Link from 'next/link'
+import { delProduct } from "@/app/app"
 
 const Layout = ({children}) => {
     return (
@@ -14,8 +15,16 @@ const Layout = ({children}) => {
             <div class="divider text-xl">ลบสินค้า</div>
 
             </div>
-            <form className={style.content}>
-                <input type="text" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+            <form action={delProduct}>
+                <input type="text" name="product_name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <br/>
+                <input type="text" name="product_size" placeholder="Size" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <br/>
+                <button class="btn glass btn-block text-xl">
+                    Confirm ลบสินค้า
+                </button>
             </form>
 
             <div class="divider">โปรดกรอกชื่อสินค้าแล้วกด Confirm เพื่อลบสินค้านั้นๆ</div>
@@ -23,9 +32,7 @@ const Layout = ({children}) => {
 
             <div className={style.confirm}>
                 <Link href={"/dashboard/productMaintain"}>
-                        <button class="btn glass btn-block text-xl">
-                            Confirm ลบสินค้า
-                        </button>
+
                 </Link>
             </div>
             <div class="divider"></div>

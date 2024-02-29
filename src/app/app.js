@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { ssh,db } from "./db";
 
 export async function addProduct(formData) {
     'use server'
@@ -44,22 +44,22 @@ export async function addService(formData) {
       })
 }
 
-export async function getProductList() {
+export async function delProduct(formData) {
   'use server'
+
+  const productData = [formData.get("product_name"),formData.get("product_size")];
+
+    const sql = 'DELETE FROM Product WHERE Product_name = ? AND Product_size = ?';
 
 
   db().then(client => {
-      client.query('Select * from Product', (error, results, fields) => {
-
+      client.query(sql, productData, (error, results, fields) => {
           if (error) {
             console.error('Error inserting data into Product table: ', error);
             return;
           }
-          
-          return results;
-
+          console.log('Data inserted successfully');
         });
     })
 }
-
 

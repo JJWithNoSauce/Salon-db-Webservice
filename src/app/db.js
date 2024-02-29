@@ -9,8 +9,8 @@ export function db(){
         },
         {
             host: 'localhost',
-            user: 'mmn',
-            password: '12345',
+            user: 'salonagent5',
+            password: 'salondb5',
             database: 'salondb_kku'
         }
     )
