@@ -3,7 +3,6 @@ import { db} from "./db";
 import { addQuery } from "./app";
 
 export default function Homepage() {
-  addQuery()
 
   return (
     <main className="Homepage">
