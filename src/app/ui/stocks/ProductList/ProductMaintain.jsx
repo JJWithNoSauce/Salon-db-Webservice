@@ -1,3 +1,4 @@
+import Link from "next/link";
 import style from "./productList.module.css"
 
 const Products = [
@@ -45,9 +46,11 @@ const ProductMaintain = () => {
             <ul>
             {Products.map((cat) =>(
                 <li key={cat.title}>
-                    <button class="btn btn-ghost text-xl">
-                        {cat.title}
-                    </button>
+                    <Link href={"/dashboard/productMaintain/" + cat.title}>
+                        <button class="btn btn-ghost text-xl" className={style.cat}>
+                            {cat.title}
+                        </button>
+                    </Link>
                 </li>
             ))}
             </ul>

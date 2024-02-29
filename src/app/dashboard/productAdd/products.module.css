@@ -8,6 +8,10 @@
 }
 
 .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex: 3;
     padding: 10px;
 }
