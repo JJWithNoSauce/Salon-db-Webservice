@@ -22,8 +22,6 @@ export async function addProduct(formData) {
           });
       })
 }
-<<<<<<< HEAD
-=======
 
 
 export async function addService(formData) {
@@ -65,4 +63,3 @@ export async function delProduct(formData) {
     })
 }
 
->>>>>>> 2e14b2a9c609004788323136ec17036d68480afe
