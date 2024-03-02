@@ -17,7 +17,7 @@ export default function confirm(){
                 <Link href="/dashboard/services">
                     <button className="btn">เพิ่มรายการ</button>
                 </Link>
-                <Link href="/dashboard/services/employee/detail/confirm/success">
+                <Link href="/dashboard/services/detail/confirm/success">
                     <button className="btn">ยืนยัน !</button>
                 </Link>    
             </div>
