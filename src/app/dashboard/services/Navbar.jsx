@@ -7,11 +7,11 @@ export default function Navbar(){
             <ul>
                 <Link href="/dashboard/services">บริการ</Link>
                 &gt;
-                <Link href="/dashboard/services/employee">เลือกช่าง</Link>
+                <Link href="/dashboard/services">เลือกช่าง</Link>
                 &gt;
-                <Link href="/dashboard/services/employee/detail">รายละเอียด</Link>
+                <Link href="/dashboard/services/detail">รายละเอียด</Link>
                 &gt;
-                <Link href="/dashboard/services/employee/detail/confirm">ยืนยัน</Link>
+                <Link href="/dashboard/services/detail/confirm">ยืนยัน</Link>
             </ul>
         </nav>
     )
