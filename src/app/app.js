@@ -24,6 +24,33 @@ export async function addProduct(formData) {
 }
 
 
+export async function editProduct(formData) {
+  'use server'
+
+      const product_id = formData.get("id")
+      const product_name= formData.get("name")
+      const product_size= formData.get("size")
+      const product_type=formData.get("type")
+      const product_price= formData.get("price")
+      const product_amount= formData.get("amount")
+      const em_id=formData.get('em_Id')
+    console.log(product_name)
+    db().then(client => {
+      client.query('UPDATE Product SET product_name = ?, product_size = ?, product_type = ?, product_price = ?, product_amount = ? WHERE product_id = ?',
+      [product_name, product_size, product_type, product_price, product_amount, product_id], (error, results, fields) => {
+
+          if (error) {
+            console.error('Error inserting data into Product table: ', error);
+            return;
+          }
+          console.log('Data inserted successfully');
+        });
+    })
+    
+    
+}
+
+
 export async function addService(formData) {
     'use server'
     const service = {
@@ -42,6 +69,7 @@ export async function addService(formData) {
             console.log('Data inserted successfully');
           });
       })
+    ssh.close()
 }
 
 export async function delProduct(formData) {
@@ -61,5 +89,6 @@ export async function delProduct(formData) {
           console.log('Data inserted successfully');
         });
     })
+  ssh.close()
 }
 
