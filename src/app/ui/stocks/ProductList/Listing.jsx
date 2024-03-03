@@ -1,5 +1,5 @@
-import { getProductList } from "@/app/app";
-const Lists = await getProductList();
+
+const Lists = [];
 
 
 export default Lists;

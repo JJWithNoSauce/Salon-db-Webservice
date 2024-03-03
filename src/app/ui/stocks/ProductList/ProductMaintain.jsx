@@ -1,28 +1,17 @@
 import Link from "next/link";
 import style from "./productList.module.css"
-import { db,ssh } from "@/app/db";
 
 const ProductMaintain = async () => {
-    const client = await db(); 
-    const results = await new Promise((resolve, reject) => {
-      client.query('SELECT * FROM Product', (error, results, fields) => {
-        if (error) {
-          reject(error);
-          return;
-        }
-        resolve(results);
-      });
-    });
-    ssh.close();
-
+    const res= await fetch('http://localhost:3000/api/getproduct')
+    const products = await res.json()
     return (
         <div className={style.list}>
             <ul>
-            {Array.from(results).map((cat) =>(
+            {Array.from(products).map((cat) =>(
                 <li key={cat.product_name}>
-                    <Link href={"/dashboard/productMaintain/" + cat.product_name}>
+                    <Link href={"/dashboard/productMaintain/" + cat.product_id }>
                         <button class="btn btn-ghost text-xl" className={style.cat}>
-                            {cat.product_name}
+                            {cat.product_type +' '+cat.product_name +' ขนาด '+ cat.product_size}
                         </button>
                     </Link>
                 </li>

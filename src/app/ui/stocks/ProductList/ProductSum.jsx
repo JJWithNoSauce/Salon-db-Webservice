@@ -2,25 +2,15 @@ import style from "./productList.module.css"
 
 const Products = [
     {
-        title: "Shampoo",
-        amount: 1,
-        price:30,
-    },
-    {
-        title: "Soaps",
-        amount: 1,
-        price:40,
-    },
-    {
-        title: "Cool Stuffs",
-        amount: 3,
-        price:50,
-    },
-    {
-        title: "Very Nice Shampoo",
+        title: "ZOYA",
         amount: 2,
-        price:100,
+        price: 290,
     },
+    {
+        title: "Pantene",
+        amount: 1,
+        price:189,
+    }
 ]
 
 const sumPrice = Products.reduce((total, product) => {

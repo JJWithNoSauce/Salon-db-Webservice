@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { db} from "./db";
 import { addQuery } from "./app";

@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+}
+
+.menu{
+    flex: 2;
+    padding: 20px;
+}
+
+.content{
+    flex: 2;
+    padding: 10px;
+}
+
