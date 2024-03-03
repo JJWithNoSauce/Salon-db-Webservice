@@ -2,7 +2,10 @@ import Link from "next/link";
 import style from "./productList.module.css"
 
 const ProductMaintain = async () => {
-    const res= await fetch('http://localhost:3000/api/getproduct')
+
+    const res= await fetch('http://localhost:3000/api/getproduct',{
+        next:{revalidate:1}
+    })
     const products = await res.json()
     return (
         <div className={style.list}>
