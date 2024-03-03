@@ -10,7 +10,9 @@ export default function confirm(){
                     <br /> <br /> 
                     ช่างที่เลือก :
                     <br /> <br />
-                    รายละเอียดการจอง :
+                    รายละเอียดการจอง :<br />
+                    เบอร์โทรลูกค้า :<br />
+                    <br />ราคารวม :
                     <br /> <br />
                 </div>
                 <button className="btn">ลบรายการ</button>
