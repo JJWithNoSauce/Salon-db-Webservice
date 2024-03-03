@@ -1,16 +1,18 @@
 import style from "../products.module.css"
-import Lists from "/src/app/ui/stocks/ProductList/Listing.jsx";
 
-const productMaintain = ({params}) => {
+const productMaintain = async ({params}) => {
+    const res= await fetch('http://localhost:3000/api/getproduct/'+params.productid)
+    const product = await res.json()
+
     return (
         <div>
              <div class="divider text-xl">รายละเอียดสินค้า</div>
                 
-                <div class="text-xl">{"ชื่อสินค้า : " + params.productName}</div>
-                <div class="text-xl">{"ขนาดสินค้า: " + params.size}</div>
-                <div class="text-xl">{"ประเภทสินค้า : " + params.type}</div>
-                <div class="text-xl">{"จำนวนสินค้า : " + params.amount}</div>
-                <div class="text-xl">{"ราคาสินค้า : " + params.price}</div>
+                <div class="text-xl">{"ชื่อสินค้า : " + product[0].product_name}</div>
+                <div class="text-xl">{"ขนาดสินค้า: " + product[0].product_size}</div>
+                <div class="text-xl">{"ประเภทสินค้า : " + product[0].product_type}</div>
+                <div class="text-xl">{"จำนวนสินค้า : " + product[0].product_amount}</div>
+                <div class="text-xl">{"ราคาสินค้า : " + product[0].product_price}</div>
             
             <div class="divider text-xl"></div>
             <div class="divider text-xl">ปรับแต่งข้อมูลสินค้า</div>
@@ -21,13 +23,9 @@ const productMaintain = ({params}) => {
                 <input type="text" placeholder="Type" class="input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Amount" class="input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="Price" class="input input-bordered w-full max-w-xs" />
+                <button class="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
             
-            <div class="divider text-xl"></div>
-            <div className={style.content}>
-                <button class="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
-            </div>
-            <div class="divider text-xl"></div>
             
         </div>
     )
