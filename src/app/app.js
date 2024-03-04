@@ -79,6 +79,29 @@ export async function addCustomer(formData) {
   })
 }
 
+export async function editEmployee(formData) {
+  'use server'
+
+  const em_id = formData.get('id')
+  const em_name = formData.get('name')
+  const em_address = formData.get('address')
+  const em_phone = formData.get('phone')
+  const em_email = formData.get('email')
+  const isadmin = true
+
+  db().then(client => {
+    client.query('UPDATE Employee SET em_name = ?, em_address = ?, em_phone = ?, em_email = ?, isadmin = ? WHERE em_id = ?',
+    [em_name, em_address, em_phone, em_email, isadmin, em_id], (error, results, fields) => {
+
+        if (error) {
+          console.error('Error inserting data into Product table: ', error);
+          return;
+        }
+        console.log('Data inserted successfully');
+      });
+  })
+}
+
 export async function editProduct(formData) {
   'use server'
 

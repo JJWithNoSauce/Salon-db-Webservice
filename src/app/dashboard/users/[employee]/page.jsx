@@ -19,7 +19,9 @@ const productMaintain = async ({params}) => {
                 <div class="text-xl">{"Phone: " + employee[0].em_email}</div>
             
             <div class="divider text-xl"></div>
-            
+            {/* <div>
+                <h2 class="text-xl">ความสามารถ</h2>
+            </div> */}
         </div>
     )
 }

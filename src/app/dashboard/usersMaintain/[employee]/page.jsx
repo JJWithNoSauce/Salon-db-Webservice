@@ -1,10 +1,10 @@
 import React from "react"
 import style from "../user.module.css"
-import { editProduct } from "@/app/app"
+import { editEmployee } from "@/app/app"
 
 const userMaintain = async ({params}) => {
 
-    const res= await fetch('http://localhost:3000/api/getemployee/'+params.productid,{
+    const res= await fetch('http://localhost:3000/api/getemployee/'+params.employee,{
         next: {revalidate:1}
     })
     const employee = await res.json()
@@ -21,14 +21,16 @@ const userMaintain = async ({params}) => {
             <div class="divider text-xl"></div>
             <div class="divider text-xl">ปรับแต่งข้อมูลพนักงาน</div>
 
-            <form className={style.content} action={editProduct}>
-            <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" required />
+            <form className={style.content} action={editEmployee}>
+                <input type="number" name="id" value={employee[0].em_id} class="input input-bordered w-full max-w-xs" readOnly/>
+                <br />
+                <input type="text" name="name" defaultValue={employee[0].em_name} class="input input-bordered w-full max-w-xs" required />
                 <br/>
-                <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" required />
+                <input type="text" name="address" defaultValue={employee[0].em_address} class="input input-bordered w-full max-w-xs" required />
                 <br/>
-                <input type="email" name="email" placeholder="Email" class="input input-bordered w-full max-w-xs" required />
+                <input type="email" name="email" defaultValue={employee[0].em_email} class="input input-bordered w-full max-w-xs" required />
                 <br/>
-                <input type="Phone" name="Phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" required />
+                <input type="Phone" name="phone" defaultValue={employee[0].em_phone} class="input input-bordered w-full max-w-xs" required />
                 <br/>
                 <button class="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
