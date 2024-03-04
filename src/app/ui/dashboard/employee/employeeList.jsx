@@ -12,7 +12,7 @@ const employeeList = async () => {
             <ul>
             {Array.from(employee).map((cat) =>(
                 <li key={cat.em_id}>
-                    <Link href={"/dashboard/commission/" + cat.em_id }>
+                    <Link href={"/dashboard/users/" + cat.em_id }>
                         <button class="btn btn-ghost text-xl" className={style.cat}>
                             {cat.em_name}
                         </button>
