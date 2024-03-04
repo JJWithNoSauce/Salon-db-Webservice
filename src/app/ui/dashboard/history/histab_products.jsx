@@ -34,13 +34,14 @@ const HistabProducts = () => {
                     <tbody>
                         {ProductBilling.map((cat) => (
                             <tr key={cat.productbilling_id}>
-                                <Link href={"/dashboard/history/historyProduct/"+productbilling_id}>
-                                    <td>{cat.productbilling_id}</td>
-                                    <td>{cat.cus_phone}</td>
-                                    <td>{String(cat.productbiling_date)}</td>
-                                    <td>{cat.em_name}</td>
-                                    <td>{cat.totalOrder}</td>
-                                    <td>{cat.totalPrice}</td>
+                                <td>{cat.productbilling_id}</td>
+                                <td>{cat.cus_phone}</td>
+                                <td>{String(cat.productbiling_date)}</td>
+                                <td>{cat.em_name}</td>
+                                <td>{cat.totalOrder}</td>
+                                <td>{cat.totalPrice}</td>
+                                <Link href={"/dashboard/history/historyProduct/"+cat.productbilling_id}>
+                                    <button className="btn">ดูรายละเอียด</button>
                                 </Link>
                             </tr>
                         ))}

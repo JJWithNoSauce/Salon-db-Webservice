@@ -1,4 +1,5 @@
 import { db, ssh } from "@/app/db";
+import Link from "next/link";
 
 const client = await db(); 
 const ServiceBilling = await new Promise((resolve, reject) => {
@@ -41,6 +42,9 @@ const HistabServices = () => {
                                 <td>{cat.em_name}</td>
                                 <td>{cat.totalService}</td>
                                 <td>{cat.totalPrice}</td>
+                                <Link href={"/dashboard/history/historyService/"+cat.servicebilling_id}>
+                                    <button className="btn">ดูรายละเอียด</button>
+                                </Link>
                             </tr>
                         ))}
                     </tbody>
