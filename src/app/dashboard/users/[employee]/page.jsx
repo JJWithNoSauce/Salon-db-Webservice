@@ -12,20 +12,6 @@ const productMaintain = async ({ params }) => {
     })
     const employee = await res.json()
 
-    const client = await db(); 
-    const skill = await new Promise((resolve, reject) => {
-      client.query('SELECT service_name from Employee, EmployeeSkill, Service WHERE Employee.em_id = EmployeeSkill.em_id AND EmployeeSkill.service_id = Service.service_id AND Employee.em_id = '+id_query, (error, results, fields) => {
-        if (error) {
-          reject(error);
-          return;
-            }
-            resolve(results);
-        });
-    });
-    ssh.close();
-
-    console.log(skill)
-
     return (
         <div>
              <div class="divider text-xl">พนักงานที่เลือก</div>
@@ -36,14 +22,6 @@ const productMaintain = async ({ params }) => {
                 <div class="text-xl">{"Phone: " + employee[0].em_email}</div>
             
             <div class="divider text-xl"></div>
-            <div class="divider text-xl">ความสามารถ</div>
-            <div>
-                {skill.map(item=>(
-                    <div key={item.service_name}>
-                            <h2>{item.service_name}</h2>
-                    </div>
-                ))}
-            </div>
         </div>
     )
 }
