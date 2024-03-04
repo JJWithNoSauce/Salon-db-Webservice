@@ -22,9 +22,11 @@ const ProductList = async () => {
             <div class="divider text-xl">รายการสินค้า</div>
             {results.map((cat) =>(
                 <li key={cat.product_name}>
-                    <button class="btn btn-ghost text-xl">
-                        {cat.product_name} || {cat.product_price} บาท
-                    </button>
+                    <div >
+                        {cat.product_type +' '+cat.product_name +' ขนาด '+ cat.product_size}  
+                        <br/>
+                        <div>{cat.product_price} บาท</div>
+                    </div>
                     <div>
                     <button class="btn btn-outline btn-success text-xl">
                         add
