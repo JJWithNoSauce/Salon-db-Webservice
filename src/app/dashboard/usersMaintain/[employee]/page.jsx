@@ -1,6 +1,7 @@
 import React from "react"
 import style from "../user.module.css"
-import { editEmployee } from "@/app/app"
+import { editEmployee, addSkill } from "@/app/app"
+import { db, ssh } from "@/app/db"
 
 const userMaintain = async ({params}) => {
 
@@ -8,6 +9,19 @@ const userMaintain = async ({params}) => {
         next: {revalidate:1}
     })
     const employee = await res.json()
+
+    const client = await db(); 
+    const skill = await new Promise((resolve, reject) => {
+      client.query('SELECT * FROM Service', (error, results, fields) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve(results);
+      });
+    });
+
+    console.log(skill)
 
     return (
         <div>
@@ -34,8 +48,15 @@ const userMaintain = async ({params}) => {
                 <br/>
                 <button class="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
-            
-            
+            <div class="divider text-xl"></div>
+            <div class="divider text-xl">เพิ่มความสามารถ</div>
+            <form action={addSkill}>
+                <input type="number" name="id" value={employee[0].em_id} class="input input-bordered w-full max-w-xs" readOnly/>
+                <br />
+                <input type="text" name="skillid" placeholder="ใส่รหัสความสามารถ" class="input input-bordered w-full max-w-xs" required/>
+                <br />
+                <button type="submit" className='btn'>ยืนยันการปรับแต่ง</button>
+            </form>   
         </div>
     )
 }

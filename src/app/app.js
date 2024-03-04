@@ -128,6 +128,26 @@ export async function editProduct(formData) {
     
 }
 
+export async function addSkill(formData){
+    'use server'
+
+    const em_id = formData.get('id')
+    const skill = Number(formData.get('skillid'))
+
+    console.log(em_id)
+    console.log(skill)
+
+    db().then(client => {
+      client.query('INSERT INTO EmployeeSkill(em_id, service_id) VALUES (?, ?)', [em_id, skill], (error, results, fields) => {
+          if (error) {
+            console.error('Error inserting data into Product table: ', error);
+            return;
+          }
+          console.log('Data inserted successfully');
+        });
+    })
+  }
+
 export async function addService(formData) {
     'use server'
     const service = {
@@ -212,6 +232,7 @@ export async function updateCalCom(formData) {
         });
     })
 }
+
 
 
 
