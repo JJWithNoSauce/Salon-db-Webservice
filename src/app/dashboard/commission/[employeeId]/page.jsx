@@ -11,11 +11,11 @@ const productMaintain = async ({params}) => {
 
     return (
         <div>
-             <div class="divider text-xl">พนักงานที่เลือก</div>
+             <div clasNames="divider text-xl">พนักงานที่เลือก</div>
                 
-                <div class="text-xl">{"ชื่อพนักงาน : " + employee[0].em_name}</div>
+                <div className="text-xl">{"ชื่อพนักงาน : " + employee[0].em_name}</div>
             
-            <div class="divider text-xl"></div>
+            <div className="divider text-xl"></div>
             
         </div>
     )
