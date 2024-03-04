@@ -1,4 +1,5 @@
 import { db, ssh } from "@/app/db";
+import Link from "next/link";
 
 const client = await db(); 
 const ProductBilling = await new Promise((resolve, reject) => {
@@ -33,12 +34,14 @@ const HistabProducts = () => {
                     <tbody>
                         {ProductBilling.map((cat) => (
                             <tr key={cat.productbilling_id}>
-                                <td>{cat.productbilling_id}</td>
-                                <td>{cat.cus_phone}</td>
-                                <td>{String(cat.productbiling_date)}</td>
-                                <td>{cat.em_name}</td>
-                                <td>{cat.totalOrder}</td>
-                                <td>{cat.totalPrice}</td>
+                                <Link href={"/dashboard/history/historyProduct/"+productbilling_id}>
+                                    <td>{cat.productbilling_id}</td>
+                                    <td>{cat.cus_phone}</td>
+                                    <td>{String(cat.productbiling_date)}</td>
+                                    <td>{cat.em_name}</td>
+                                    <td>{cat.totalOrder}</td>
+                                    <td>{cat.totalPrice}</td>
+                                </Link>
                             </tr>
                         ))}
                     </tbody>
