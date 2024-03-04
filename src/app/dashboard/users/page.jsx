@@ -1,15 +1,11 @@
-import style from "../users/adduser/user.module.css"
-
-
-const Layout = ({children}) => {
+const userMaintain = () => {
     return (
-        <div className={style.container}>
-            <div className={style.content}>       .
-            </div>
-            <div className={style.content}>
-            </div>
+        <div>
+            <div class="divider text-xl">พนักงาน</div>
+            <div class="text-xl">เลือกพนักงานเพื่อดูรายละเอียด</div>
+            <div class="divider text-xl"></div>
         </div>
     )
 }
 
-export default Layout
+export default userMaintain

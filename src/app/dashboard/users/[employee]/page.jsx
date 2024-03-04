@@ -1,5 +1,5 @@
 import React from "react"
-import style from "../products.module.css"
+import style from "../user.module.css"
 import { editProduct } from "@/app/app"
 
 const productMaintain = async ({params}) => {
