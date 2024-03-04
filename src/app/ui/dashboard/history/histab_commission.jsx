@@ -15,7 +15,7 @@ const HistabCommission = async () => {
                     <thead>
                         <tr>
                             <th>Comid</th>
-                            <th>Id</th>
+                            <th>Em_Id</th>
                             <th>Startdate</th>
                             <th>Enddate</th>
                             <th>Rate</th>

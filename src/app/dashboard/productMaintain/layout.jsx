@@ -23,7 +23,6 @@ const Layout = ({children}) => {
                         </button>
                 </Link>
 
-                <div className="divider"></div>
                 <div className="divider text-xl">รายการสินค้า</div>
                 
                 <Maintain/>
