@@ -1,6 +1,12 @@
 import comms from "./hislist"
 
-const HistabCommission = () => {
+const HistabCommission = async () => {
+    
+    const res= await fetch('http://localhost:3000/api/getsercom',{
+        next: {revalidate:1}
+    })
+    const sercom = await res.json()
+    
     return (
         <div>
             <div className="divider text-xl">Commission History</div>
@@ -9,7 +15,7 @@ const HistabCommission = () => {
                     <thead>
                         <tr>
                             <th>Comid</th>
-                            <th>Id</th>
+                            <th>Em_Id</th>
                             <th>Startdate</th>
                             <th>Enddate</th>
                             <th>Rate</th>
@@ -17,7 +23,7 @@ const HistabCommission = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {comms.map((cat) => (
+                        {sercom.map((cat) => (
                             <tr key={cat.commissionid}>
                                 <td>{cat.commissionid}</td>
                                 <td>{cat.Em_id}</td>

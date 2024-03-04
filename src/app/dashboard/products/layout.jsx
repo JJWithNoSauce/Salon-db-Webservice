@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import Link from 'next/link'
 
 import style from "./products.module.css";
 import { useState } from "react";
@@ -123,8 +124,6 @@ const Layout = ({ children }) => {
     return (
         <div className={style.container}>
             <div className={style.list}>
-                <input type="text" placeholder="ค้นหา" className="input input-bordered w-full max-w-xs" />
-                <button className="btn glass">ค้นหา</button>
                 <ul>
                     <div className="divider text-xl">รายการสินค้า</div>
                     {products.map((product) => (
@@ -148,7 +147,7 @@ const Layout = ({ children }) => {
                 </ul>
             </div>
             <div>
-                <div className="divider text-xl">ยอดรวม</div>
+                <div className="divider text-xl">บิล</div>
                 <ul>
                     {cart.map((item) => (
                         <li key={item.product_id}>
@@ -170,7 +169,11 @@ const Layout = ({ children }) => {
                         <input type="text" name="cus_phone" placeholder="Customer Phone" className="input input-bordered w-full max-w-xs" required/>
                         <br/>
                         <button className="btn">Checkout!</button>
+                        <Link href="/dashboard/register">
+                            <button className="btn">สมัครลูกค้า</button>
+                        </Link>
                     </form>
+                    
                 </ul>
             </div>
         </div>
