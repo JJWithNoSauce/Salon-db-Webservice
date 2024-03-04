@@ -109,3 +109,29 @@ export async function delProduct(formData) {
   ssh.close()
 }
 
+export async function updateCalCom(formData) {
+  'use server'
+
+  const ComsData = {
+      em_id: formData.get("em_id"),
+      servicebilling_start: formData.get({"Start Date" : "Start Time"}),
+      servicebilling_end: formData.get({"End Date" : "End Time"}),
+    };
+
+
+  db().then(client => {
+    
+      client.query('INSERT INTO ServiceBillingDate (em_id, servicebilling_start, servicebilling_end) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE servicebilling_start = VALUES(servicebilling_start), servicebilling_end = VALUES(servicebilling_end)',
+      [ComsData.em_id, ComsData.servicebilling_start, ComsData.servicebilling_end],
+      (error, results, fields) => {
+          if (error) {
+            console.error('Error inserting data into Product table: ', error);
+            return;
+          }
+          console.log('Data inserted successfully');
+          console.log(ComsData.em_id, ComsData.servicebilling_start, ComsData.servicebilling_end)
+        });
+    })
+}
+
+
