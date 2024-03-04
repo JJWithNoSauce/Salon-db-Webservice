@@ -16,6 +16,8 @@ const ProductList = async () => {
     ssh.close();
     return (
         <div className={style.list}>
+            <input type="text" placeholder="ค้นหา" class="input input-bordered w-full max-w-xs" />
+            <button class="btn glass">ค้นหา</button>
             <ul>
             <div class="divider text-xl">รายการสินค้า</div>
             {results.map((cat) =>(

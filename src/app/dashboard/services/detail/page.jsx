@@ -1,8 +1,10 @@
+'use client'
+
 import style from './detail.module.css'
 import Link from 'next/link'
 
 export default function detail(){
-
+    
     return(
         <> 
             <div className={style.container}>
@@ -13,7 +15,9 @@ export default function detail(){
                 <Link href="/dashboard/services/detail/confirm">
                     <button className="btn">ตกลง</button>
                 </Link>
-                <button className="btn">สมัคร</button>
+                <Link href="/dashboard/register">
+                    <button className="btn">สมัคร</button>
+                </Link>
             </div>
         </>
     )
