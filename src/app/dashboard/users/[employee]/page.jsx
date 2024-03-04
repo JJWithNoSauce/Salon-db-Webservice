@@ -21,8 +21,8 @@ const productMaintain = async ({ params }) => {
             }
             resolve(results);
         });
-        });
-        ssh.close();
+    });
+    ssh.close();
 
     console.log(skill)
 
