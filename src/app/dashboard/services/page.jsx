@@ -19,8 +19,12 @@ export default async function services(){
         <> 
             <div className={styles.container}>
                 {results.map(item=>(
-                    <div key={item.service_name}>
-                        <Link href={'/dashboard/services/'+item.service_id}>
+                    <div key={item.service_id}>
+                        <Link 
+                         href={{ 
+                            pathname:'/dashboard/services/'+item.service_id, 
+                            query: item.service_id}}
+                            >
                             <h2 className={styles.service}>{item.service_name}</h2>
                             <br />
                             <h2 className={styles.service}>ราคา {item.service_avg_price} บาท</h2>
