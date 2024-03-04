@@ -26,10 +26,6 @@ import { UserData } from "@/app/app"
                 <br/>
                 <input type="Phone" name="Phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" />
                 <br/>
-                <input type="text" name="service" placeholder="Service" class="input input-bordered w-full max-w-xs" />
-                <br/>
-                <input type="number" name="salary" placeholder="Salary" class="input input-bordered w-full max-w-xs" />
-                <br/>
 
                 <button class="btn glass btn-block text-xl" type="submit" href={"/dashboard/usersMaintain"}>
                     Confirm เพิ่มพนักงาน
