@@ -1,5 +1,5 @@
-import Maintain from "/src/app/ui/employee/employeeList.jsx"
-import Config from "/src/app/ui/employee/employeeList.jsx"
+import Maintain from "../src/app/ui/dashboard/employee/employeeList.jsx"
+import Config from "../src/app/ui/dashboard/employee/employeeList.jsx"
 import style from "./user.module.css"
 import Link from 'next/link'
 
