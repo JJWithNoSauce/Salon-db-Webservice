@@ -23,6 +23,25 @@ export async function addProduct(formData) {
       })
 }
 
+export async function addCustomer(formData) {
+  'use server'
+
+  const customerData = {
+    cus_phone: formData.get("phone"),
+    cus_name: formData.get("name")
+  }
+
+  db().then(client => {
+    client.query('INSERT INTO Customer SET ?', customerData, (error, results, fields) => {
+      if (error) {
+        console.error('Error inserting data into Customer table: ', error)
+        return;
+      }
+      console.log('Data inserted successfully')
+    })
+  })
+}
+
 export async function editProduct(formData) {
   'use server'
 
