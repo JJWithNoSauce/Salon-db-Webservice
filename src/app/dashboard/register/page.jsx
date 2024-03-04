@@ -12,7 +12,7 @@ export default function detail(){
             </form>
             </div>
             <div>
-                <Link href="/dashboard/register/confirm">
+                <Link href="/dashboard/register/success">
                     <button className="btn">ตกลง</button>
                 </Link>
             </div>
