@@ -17,11 +17,7 @@ const Layout = ({children}) => {
             </div>
             <form action={delProduct}>
                 <input type="text" name="product_name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
-                <br/>
-                <br/>
-                <input type="text" name="product_size" placeholder="Size" class="input input-bordered w-full max-w-xs" />
-                <br/>
-                <br/>
+ 
                 <button class="btn glass btn-block text-xl">
                     Confirm ลบพนักงาน
                 </button>

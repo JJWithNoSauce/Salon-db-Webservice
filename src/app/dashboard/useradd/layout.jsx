@@ -18,9 +18,9 @@ import { UserData } from "@/app/app"
 
             </div>
             <form action={UserData}>
-                <input type="text" name="fname" placeholder="First Name" class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
                 <br/>
-                <input type="text" name="lname" placeholder="Last Name" class="input input-bordered w-full max-w-xs" />
+                <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
                 <br/>
                 <input type="email" name="email" placeholder="Email" class="input input-bordered w-full max-w-xs" />
                 <br/>

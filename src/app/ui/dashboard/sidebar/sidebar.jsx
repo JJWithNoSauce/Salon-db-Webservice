@@ -48,7 +48,15 @@ const MaintainItems = [
         title: "Service Maintain",
         path: "/dashboard/servicesMaintain",
         icon: <FaBarcode />,
+
     },
+
+    {
+        
+        title: "User Maintain",
+        path: "/dashboard/usersMaintain",
+        icon: <FaBarcode />,
+    }
 ];
 
 

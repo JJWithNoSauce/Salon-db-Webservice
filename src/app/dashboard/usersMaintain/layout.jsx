@@ -1,9 +1,9 @@
-import Maintain from "../src/app/ui/dashboard/employee/employeeList.jsx"
-import Config from "../src/app/ui/dashboard/employee/employeeList.jsx"
+import Maintain from "/src/app/ui/dashboard/employee/employeeList.jsx"
+import Config from "/src/app/ui/dashboard/employee/employeeList.jsx"
 import style from "./user.module.css"
 import Link from 'next/link'
 
-const Layout = ({children}) => {
+const emLayout = ({children}) => {
     return (
         <div className={style.container}>
             <div className={style.content}>
@@ -37,4 +37,4 @@ const Layout = ({children}) => {
     )
 }
 
-export default Layout
+export default emLayout
