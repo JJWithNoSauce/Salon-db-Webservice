@@ -1,6 +1,6 @@
 import style from "./user.module.css"
 import Link from 'next/link'
-import { delProduct } from "@/app/app"
+import { delEmployee } from "@/app/app"
 
 const Layout = ({children}) => {
     return (
@@ -15,8 +15,8 @@ const Layout = ({children}) => {
             <div class="divider text-xl">ลบพนักงาน</div>
 
             </div>
-            <form action={delProduct}>
-                <input type="text" name="product_name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+            <form action={delEmployee}>
+                <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
  
                 <button class="btn glass btn-block text-xl">
                     Confirm ลบพนักงาน

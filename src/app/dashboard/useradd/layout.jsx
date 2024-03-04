@@ -1,6 +1,6 @@
 import style from "./user.module.css"
 import Link from 'next/link'
-import { UserData } from "@/app/app"
+import { addEmployee } from "@/app/app"
 
  export async function Layout(){
     'use server'
@@ -17,14 +17,14 @@ import { UserData } from "@/app/app"
             <div class="divider text-xl">เพิ่มพนักงาน</div>
 
             </div>
-            <form action={UserData}>
+            <form action={addEmployee}>
                 <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
                 <br/>
                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
                 <br/>
                 <input type="email" name="email" placeholder="Email" class="input input-bordered w-full max-w-xs" />
                 <br/>
-                <input type="Phone" name="Phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" />
+                <input type="Phone" name="phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" />
                 <br/>
 
                 <button class="btn glass btn-block text-xl" type="submit" href={"/dashboard/usersMaintain"}>
