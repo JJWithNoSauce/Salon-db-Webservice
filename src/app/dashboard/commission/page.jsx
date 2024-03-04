@@ -1,9 +1,9 @@
 const productMaintain = () => {
     return (
         <div>
-            <div class="divider text-xl">คำนวณ Commission</div>
-            <div class="text-xl">โปรดเลือกพนักงานเพื่อคำนวณค่า Commission</div>
-            <div class="divider text-xl"></div>
+            <div className="divider text-xl">คำนวณ Commission</div>
+            <div className="text-xl">โปรดเลือกพนักงานเพื่อคำนวณค่า Commission</div>
+            <div className="divider text-xl"></div>
         </div>
     )
 }

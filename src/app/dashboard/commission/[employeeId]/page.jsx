@@ -1,6 +1,7 @@
 import React from "react"
 import { updateCalCom } from "@/app/app"
 import style from "../products.module.css"
+import Link from 'next/link'
 
 const productMaintain = async ({params}) => {
 
@@ -11,14 +12,15 @@ const productMaintain = async ({params}) => {
 
     return (
         <div>
+
              <div class="divider text-xl">พนักงานที่เลือก</div>
                 <div class="text-xl">{"พนักงานที่ถูกเลือก : " + employee[0].em_name}</div>
             
             
 
             <form action={updateCalCom}>   
-                <div class="text-xl">{"รหัสพนักงาน : "}
-                    <input type="text" name="em_id" defaultValue = {params.employeeId} class="input input-bordered w-full max-w-xs"/>
+                <div class="text-xl">{"รหัสพนักงาน : " + params.employeeId}
+                    <input type="number" name="em_id" defaultValue = {params.employeeId} class="input input-bordered w-full max-w-xs invisible"/>
                 </div>
             
             <div class="divider text-xl">วันเริ่มคำนวณ</div>
@@ -36,7 +38,9 @@ const productMaintain = async ({params}) => {
             <div class="divider text-xl"></div>
             </form>
 
+            <Link href = {'/dashboard/commcal/' + params.employeeId}>
             <button class="btn glass btn-block text-xl">เริ่มคำนวณ</button>
+            </Link>
             <div class="divider text-xl"></div>
         </div>
     )

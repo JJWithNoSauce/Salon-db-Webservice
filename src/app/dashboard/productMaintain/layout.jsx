@@ -7,28 +7,28 @@ const Layout = ({children}) => {
     return (
         <div className={style.container}>
             <div className={style.content}>
-                <div class="divider text-xl">เพิ่มหรือลบรายการสินค้า</div>
+                <div className="divider text-xl">เพิ่มหรือลบรายการสินค้า</div>
 
                 <Link href={"/dashboard/productAdd"}>
-                        <button class="btn glass btn-block text-xl">
+                        <button className="btn glass btn-block text-xl">
                             Add Product
                         </button>
                 </Link>
                 
-                <div class="divider">OR</div>
+                <div className="divider">OR</div>
                 
                 <Link href={"/dashboard/productRemove"}>
-                        <button class="btn glass btn-block text-xl">
+                        <button className="btn glass btn-block text-xl">
                             Remove Product
                         </button>
                 </Link>
 
-                <div class="divider"></div>
-                <div class="divider text-xl">รายการสินค้า</div>
+                <div className="divider"></div>
+                <div className="divider text-xl">รายการสินค้า</div>
                 
                 <Maintain/>
 
-                <div class="divider">เลือกรายการเพื่อดูรายละเอียดหรือปรับแต่ง</div>
+                <div className="divider">เลือกรายการเพื่อดูรายละเอียดหรือปรับแต่ง</div>
             </div>
             <div className={style.content}>
                 {children}

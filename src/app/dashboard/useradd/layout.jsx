@@ -6,15 +6,16 @@ import { addEmployee } from "@/app/app"
     'use server'
 
     return (
-        <div class="form-control">
+        <div className="form-control">
             <div>
+
             <Link href={"/dashboard/usersMaintain"}>
                 <button class="btn btn-square btn-outline">
                     กลับ
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </Link>
-            <div class="divider text-xl">เพิ่มพนักงาน</div>
+            <div className="divider text-xl">เพิ่มพนักงาน</div>
 
             </div>
             <form action={addEmployee}>
@@ -22,7 +23,7 @@ import { addEmployee } from "@/app/app"
                 <br/>
                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
                 <br/>
-                <input type="email" name="email" placeholder="Email" class="input input-bordered w-full max-w-xs" />
+                <input type="email" name="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
                 <br/>
                 <input type="Phone" name="phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" />
                 <br/>
@@ -32,9 +33,9 @@ import { addEmployee } from "@/app/app"
                 </button>
             </form>
 
-            <div class="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มพนักงาน</div>
+            <div className="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มพนักงาน</div>
 
-            <div class="divider"></div>
+            <div className="divider"></div>
         </div>
     )
 }

@@ -189,24 +189,26 @@ export async function delEmployee(formData) {
 export async function updateCalCom(formData) {
   'use server'
 
-  const ComsData = {
-      em_id: formData.get("em_id"),
-      servicebilling_start: formData.get({"Start Date" : "Start Time"}),
-      servicebilling_end: formData.get({"End Date" : "End Time"}),
-    };
+    const em_id = formData.get("em_id")
+    const servicebilling_date_start = formData.get("Start Date")
+    const servicebilling_time_start = formData.get("Start Time")
+    const servicebilling_date_end = formData.get("End Date")
+    const servicebilling_time_end= formData.get("End Time")    
 
+    const datetimeStart = servicebilling_date_start + " " + servicebilling_time_start
+    const datetimeEnd = servicebilling_date_end + " " + servicebilling_time_end
 
   db().then(client => {
     
-      client.query('INSERT INTO ServiceBillingDate (em_id, servicebilling_start, servicebilling_end) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE servicebilling_start = VALUES(servicebilling_start), servicebilling_end = VALUES(servicebilling_end)',
-      [ComsData.em_id, ComsData.servicebilling_start, ComsData.servicebilling_end],
+      client.query('UPDATE ServiceBillingDate SET servicebilling_start = ?, servicebilling_end = ? WHERE em_id = ?',
+      [datetimeStart, datetimeEnd, em_id],
       (error, results, fields) => {
           if (error) {
             console.error('Error inserting data into Product table: ', error);
             return;
           }
           console.log('Data inserted successfully');
-          console.log(ComsData.em_id, ComsData.servicebilling_start, ComsData.servicebilling_end)
+          console.log(em_id, datetimeStart, datetimeEnd)
         });
     })
 }

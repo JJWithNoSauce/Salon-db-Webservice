@@ -7,13 +7,13 @@ const Layout = ({children}) => {
     return (
         <div className={style.container}>
             <div className={style.content}>
-                <div class="divider text-xl">พนักงาน</div>
+                <div className="divider text-xl">พนักงาน</div>
                 
                 <EmList/>
 
-                <div class="divider">เลือกพนักงานเพื่อคำนวณค่างาน</div>
+                <div className="divider">เลือกพนักงานเพื่อคำนวณค่างาน</div>
             </div>
-            <div className={style.content}>
+            <div classNameName={style.content}>
                 {children}
             </div>
         </div>
