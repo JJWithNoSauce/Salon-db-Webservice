@@ -1,4 +1,19 @@
-import comms from "./hislist"
+import { db, ssh } from "@/app/db";
+import Link from "next/link";
+
+const client = await db(); 
+const ProductBilling = await new Promise((resolve, reject) => {
+  client.query('SELECT ProductBilling.productbilling_id, ProductBilling.cus_phone, productbiling_date, em_name, sum(productorder_amount) AS totalOrder, sum(productorder_totalprice) AS totalPrice FROM ProductBilling, Employee, Customer, ProductOrder WHERE ProductBilling.productbilling_id = ProductOrder.productbilling_id AND ProductBilling.cus_phone = Customer.cus_phone AND ProductBilling.em_id = Employee.em_id GROUP BY ProductBilling.productbilling_id, ProductBilling.cus_phone, cus_name, productbiling_date, Employee.em_id, em_name;', (error, results, fields) => {
+    if (error) {
+      reject(error);
+      return;
+    }
+    resolve(results);
+  });
+});
+ssh.close()
+
+console.log(ProductBilling)
 
 const HistabProducts = () => {
     return (
@@ -8,23 +23,26 @@ const HistabProducts = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>Comid</th>
-                            <th>Id</th>
-                            <th>Startdate</th>
-                            <th>Enddate</th>
-                            <th>Rate</th>
-                            <th>Get</th>
+                            <th>Product Billing Id</th>
+                            <th>Customer Phone</th>
+                            <th>Product Billing Date</th>
+                            <th>Employee Name</th>
+                            <th>Total Product</th>
+                            <th>Total Price</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {comms.map((cat) => (
-                            <tr key={cat.commissionid}>
-                                <td>{cat.commissionid}</td>
-                                <td>{cat.Em_id}</td>
-                                <td>{cat.CommissionStartDate}</td>
-                                <td>{cat.CommissionEndDate}</td>
-                                <td>{cat.CommissionRate}</td>
-                                <td>{cat.CommissionGet}</td>
+                        {ProductBilling.map((cat) => (
+                            <tr key={cat.productbilling_id}>
+                                <td>{cat.productbilling_id}</td>
+                                <td>{cat.cus_phone}</td>
+                                <td>{String(cat.productbiling_date)}</td>
+                                <td>{cat.em_name}</td>
+                                <td>{cat.totalOrder}</td>
+                                <td>{cat.totalPrice}</td>
+                                <Link href={"/dashboard/history/historyProduct/"+cat.productbilling_id}>
+                                    <button className="btn">ดูรายละเอียด</button>
+                                </Link>
                             </tr>
                         ))}
                     </tbody>

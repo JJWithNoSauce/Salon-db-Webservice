@@ -1,4 +1,4 @@
-import EmList from "/src/app/ui/dashboard/employee/employeeList.jsx"
+import EmList from "/src/app/ui/dashboard/employee/employeeCommission.jsx"
 import Config from "/src/app/ui/stocks/ProductList/ProductConfig.jsx"
 import style from "./products.module.css"
 import Link from 'next/link'

@@ -4,7 +4,7 @@ export async function UserData(formData) {
     'use server'
     const UserData = {
         first_name: formData.get("fname"),
-        last_name: formData.get("lname"),
+        last_name: formData.get("address"),
         Email: formData.get("email"),
         Phone: formData.get("phone"),
         Service: formData.get("service"),

@@ -1,11 +1,18 @@
-
+// 'use client'
 import styles from "./employee.module.css"
 import Link from "next/link"
 import { db, ssh } from "@/app/db";
+// import { useRouter } from "next/navigation";
 
 export default async function employee({ params }){
+    
     const id_query = Number(params.service_id)
     console.log(Number(params.service_id))
+
+    // const router = useRouter()
+    // const data = router.query
+
+    // console.log(data)
 
     const client = await db(); 
     const resultEmployee = await new Promise((resolve, reject) => {
