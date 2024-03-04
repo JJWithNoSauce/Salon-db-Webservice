@@ -4,7 +4,7 @@ import { editProduct } from "@/app/app"
 
 const productMaintain = async ({params}) => {
 
-    const res= await fetch('http://localhost:3000/api/getemployee/'+params.employeeId,{
+    const res= await fetch('http://localhost:3000/api/getemployee/'+Number(params.employee),{
         next: {revalidate:1}
     })
     const employee = await res.json()
