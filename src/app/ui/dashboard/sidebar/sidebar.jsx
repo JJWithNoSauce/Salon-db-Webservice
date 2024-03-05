@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { redirect } from "next/dist/server/api-utils";
 import style from "./sidebar.module.css"
-import {FaUser,FaBox,FaDatabase,FaBath,FaBarcode,FaClipboardList,FaBook,FaCashRegister} from "react-icons/fa"
+import {FaUser,FaBox,FaDatabase,FaBath,FaBarcode,FaClipboardList,FaBook,FaCashRegister,FaUserTie,FaPumpSoap} from "react-icons/fa"
 
 const menuItems = [
     /*{
@@ -17,27 +17,27 @@ const menuItems = [
         icon: <FaCashRegister />,
     },*/
     {
-        title: "Products",
+        title: "สินค้า",
         path: "/dashboard/products",
-        icon: <FaBox />,
+        icon: <FaPumpSoap />,
     },
     {
-        title: "Services",
+        title: "บริการ",
         path: "/dashboard/services",
         icon: <FaBath />,
     },
     {
-        title: "History",
+        title: "ประวัติ",
         path: "/dashboard/history",
         icon: <FaBook />,
     },
     {
-        title: "Users",
+        title: "พนักงาน",
         path: "/dashboard/users",
-        icon: <FaUser />,
+        icon: <FaUserTie />,
     },
     {
-        title: "Customer",
+        title: "ลูกค้า",
         path: "/dashboard/register",
         icon: <FaUser />,
     },
@@ -45,12 +45,12 @@ const menuItems = [
 
 const MaintainItems = [
     {
-        title: "Product Maintain",
+        title: "จัดการสินค้า",
         path: "/dashboard/productMaintain",
         icon: <FaBarcode />,
     },
     {
-        title: "Service Maintain",
+        title: "จัดการบริการ",
         path: "/dashboard/servicesMaintain",
         icon: <FaBarcode />,
 
@@ -58,7 +58,7 @@ const MaintainItems = [
 
     {
         
-        title: "User Maintain",
+        title: "จัดการพนักงาน",
         path: "/dashboard/usersMaintain",
         icon: <FaBarcode />,
     }
@@ -82,7 +82,7 @@ const sidebar = () => {
             
         
         <details class="collapse bg-base-200">
-        <summary class="collapse-title text-xl font-medium">Maintaining</summary>
+        <summary class="collapse-title text-xl font-medium">การจัดการ</summary>
             <div class="collapse-content"> 
             <ul className={style.list}>
             {MaintainItems.map((cat) =>(

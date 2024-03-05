@@ -16,8 +16,11 @@ const Layout = ({children}) => {
 
             </div>
             <form action={delProduct}>
+                <span class="label-text">ชื่อสินค้า</span>
+                <br/>
                 <input type="text" name="product_name" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                 <br/>
+                <span class="label-text">ขนาดสินค้า</span>
                 <br/>
                 <input type="text" name="product_size" placeholder="Size" className="input input-bordered w-full max-w-xs" />
                 <br/>
@@ -28,6 +31,7 @@ const Layout = ({children}) => {
             </form>
 
             <div className="divider">โปรดกรอกชื่อสินค้าแล้วกด Confirm เพื่อลบสินค้านั้นๆ</div>
+            <div>โดยเมื่อกดปุ่มแล้วทางระบบจะนำข้อมูลออกโดยอัตโนมัติแบบไม่แจ้งเตือน โปรดกดปุ่มกลับไปยังหน้าจัดการเพื่อเช็คว่าข้อมูลถูกนำออกหรือไม่ หากไม่ถูกนำออกโปรดเช็คว่าข้อมูลที่กรอกไปนั้นถูกต้องและตรงกับข้อมูลที่ต้องการจะลบ</div>
 
 
             <div className={style.confirm}>

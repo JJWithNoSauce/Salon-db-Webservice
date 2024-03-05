@@ -163,8 +163,14 @@ const Layout = ({ children }) => {
                     <div className={style.sumlist}>{sumPrice} บาท</div>
                     <div className="divider"></div>
                     <form action={ (e) => {billing(e,cart,sumPrice)}}>
+                        <span class="label-text">ชื่อพนักงานผู้ให้บริการ</span>
+                        <br/>
                         <input type="number" name="em_id" placeholder="Employee id" className="input input-bordered w-full max-w-xs" required/>
+                        <br/>
+                        <span class="label-text">เบอร์โทรศัพท์ลูกค้า</span>
+                        <br/>
                         <input type="text" name="cus_phone" placeholder="Customer Phone" className="input input-bordered w-full max-w-xs" required/>
+                        <br/>
                         <br/>
                         <button className="btn">Checkout!</button>
                     </form>

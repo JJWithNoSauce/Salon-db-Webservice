@@ -18,13 +18,23 @@ import { addProduct } from "@/app/app"
 
             </div>
             <form action={addProduct}>
+                <span class="label-text">ชื่อสินค้า</span>
+                <br/>
                 <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" />
+                <br/>
+                <span class="label-text">ขนาดสินค้า</span>
                 <br/>
                 <input type="text" name="size" placeholder="Size" className="input input-bordered w-full max-w-xs" />
                 <br/>
+                <span class="label-text">ประเภทสินค้า</span>
+                <br/>
                 <input type="text" name="type" placeholder="Type" className="input input-bordered w-full max-w-xs" />
                 <br/>
+                <span class="label-text">จำนวณสินค้า</span>
+                <br/>
                 <input type="number" name="amount" placeholder="Amount" className="input input-bordered w-full max-w-xs" />
+                <br/>
+                <span class="label-text">ราคาสินค้า</span>
                 <br/>
                 <input type="number" name="price" placeholder="Price" className="input input-bordered w-full max-w-xs" />
                 <br/>
@@ -35,7 +45,7 @@ import { addProduct } from "@/app/app"
             </form>
 
             <div className="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มสินค้า</div>
-
+            <div>โดยเมื่อกดปุ่มแล้วทางระบบจะเพิ่มข้อมูลเข้าโดยอัตโนมัติแบบไม่แจ้งเตือน โปรดกดปุ่มกลับไปยังหน้าจัดการเพื่อเช็คว่าข้อมูลถูกเพิ่มหรือไม่ หากไม่ถูกเพิ่มโปรดเช็คว่าข้อมูลที่กรอกไปนั้นถูกต้องและไม่ซ้ำกับข้อมูลสินค้าอื่นๆ</div>
             <div className="divider"></div>
         </div>
     )

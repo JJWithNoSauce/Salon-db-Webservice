@@ -18,7 +18,11 @@ import { addProduct } from "@/app/app"
 
             </div>
             <form action={addProduct}>
+                <span class="label-text">ชื่อบริการ</span>
+                <br/>
                 <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" />
+                <br/>
+                <span class="label-text">ราคาโดยเฉลี่ยของบริการ</span>
                 <br/>
                 <input type="number" name="size" placeholder="Average Price" className="input input-bordered w-full max-w-xs" />
                 <br/>
@@ -30,7 +34,7 @@ import { addProduct } from "@/app/app"
             </form>
 
             <div className="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มบริการ</div>
-
+            <div>โดยเมื่อกดปุ่มแล้วทางระบบจะเพิ่มข้อมูลเข้าโดยอัตโนมัติแบบไม่แจ้งเตือน โปรดกดปุ่มกลับไปยังหน้าจัดการเพื่อเช็คว่าข้อมูลถูกเพิ่มหรือไม่ หากไม่ถูกเพิ่มโปรดเช็คว่าข้อมูลที่กรอกไปนั้นถูกต้องและไม่ซ้ำกับข้อมูลบริการอื่นๆ</div>
             <div className="divider"></div>
         </div>
     )
