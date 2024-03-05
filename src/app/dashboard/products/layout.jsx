@@ -151,7 +151,7 @@ const Layout = ({ children }) => {
                 <ul>
                     {cart.map((item) => (
                         <li key={item.product_id}>
-                            <div className={style.sumlist}>{item.product_name}: {item.product_price} บาท</div>
+                            <div className={style.sumlist}>{item.product_type +" " + item.product_name + " "+item.product_size}: {item.product_price} บาท</div>
                             <div className={style.sumlist}>จำนวน: {item.quantity} ชิ้น</div>
                             <div className={style.sumlist}>{"ราคารวม: " + (item.product_price * item.quantity) + " บาท"}</div>
                             <form>
