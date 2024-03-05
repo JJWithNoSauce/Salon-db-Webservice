@@ -1,6 +1,6 @@
 import style from "./products.module.css"
 import Link from 'next/link'
-import { addProduct } from "@/app/app"
+import { addService } from "@/app/app"
 
  export async function Layout(){
     'use server'
@@ -17,18 +17,18 @@ import { addProduct } from "@/app/app"
             <div className="divider text-xl">เพิ่มบริการ</div>
 
             </div>
-            <form action={addProduct}>
+            <form action={addService}>
                 <span class="label-text">ชื่อบริการ</span>
                 <br/>
                 <input type="text" name="name" placeholder="Name" className="input input-bordered w-full max-w-xs" />
                 <br/>
                 <span class="label-text">ราคาโดยเฉลี่ยของบริการ</span>
                 <br/>
-                <input type="number" name="size" placeholder="Average Price" className="input input-bordered w-full max-w-xs" />
+                <input type="number" name="price" placeholder="Average Price" className="input input-bordered w-full max-w-xs" />
                 <br/>
 
 
-                <button className="btn glass btn-block text-xl" type="submit" href={"/dashboard/productMaintain"}>
+                <button className="btn glass btn-block text-xl" type="submit" href={"/dashboard/servicesMaintain"}>
                     Confirm เพิ่มบริการ
                 </button>
             </form>

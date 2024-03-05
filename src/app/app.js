@@ -148,26 +148,39 @@ export async function addSkill(formData){
     })
   }
 
-export async function addService(formData) {
+  export async function addService(formData) {
     'use server'
-    const service = {
-        service_name: formData.get("name"),
-        service_avg_price: formData.get("avg_price"),
-      };
-
-
+  
+    const client = await db();
+    const id = await new Promise((resolve, reject) => {
+      client.query('SELECT max(service_id) AS newRow FROM Service', (error, results, fields) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve(results);
+      });
+    });
+  
+    console.log(id[0].newRow + 1)
+    const newSer_id = id[0].newRow + 1
+  
+    const serviceData = {
+      service_id: newSer_id,
+      service_name: formData.get("name"),
+      service_avg_price: formData.get("price"),
+    }
+  
     db().then(client => {
-        client.query('INSERT INTO Service SET ?', productData, (error, results, fields) => {
-
-            if (error) {
-              console.error('Error inserting data into Product table: ', error);
-              return;
-            }
-            console.log('Data inserted successfully');
-          });
+      client.query('INSERT INTO Service SET ?', serviceData, (error, results, fields) => {
+        if (error) {
+          console.error('Error inserting data into Customer table: ', error)
+          return;
+        }
+        console.log('Data inserted successfully')
       })
-    ssh.close()
-}
+    })
+  }
 
 export async function editServices(formData) {
   'use server'
@@ -188,6 +201,31 @@ export async function editServices(formData) {
         console.log({service_id,service_name,service_price});
       });
   })
+}
+
+export async function delServices(formData) {
+  'use server'
+
+  const serviceData = [formData.get("name"),formData.get("price")];
+
+    const sql = 'DELETE FROM Service WHERE service_name = ? AND service_avg_price = ?';
+
+
+  db().then(client => {
+      client.query(sql, serviceData, (error, results, fields) => {
+          if (error) {
+            console.error('Error inserting data into Product table: ', error);
+            return;
+          }
+          console.log('Data removed successfully');
+        });
+    })
+    try {
+      ssh.close();
+    } catch (error) {
+        console.error("Error closing SSH connection:", error);
+    }
+  
 }
 
 export async function delProduct(formData) {
