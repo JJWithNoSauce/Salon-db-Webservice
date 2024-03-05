@@ -48,6 +48,7 @@ const userMaintain = async ({params}) => {
                 <br/>
                 <button class="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
+
             <div class="divider text-xl"></div>
             <div class="divider text-xl">เพิ่มความสามารถ</div>
             <form action={addSkill}>
@@ -57,6 +58,9 @@ const userMaintain = async ({params}) => {
                 <br />
                 <button type="submit" className='btn'>ยืนยันการปรับแต่ง</button>
             </form>   
+
+            <div className="divider text-xl"></div>
+            
         </div>
     )
 }
