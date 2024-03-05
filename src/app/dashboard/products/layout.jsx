@@ -174,6 +174,10 @@ const Layout = ({ children }) => {
                         <br/>
                         <button className="btn">Checkout!</button>
                     </form>
+
+                    <div className="divider ">คำเตือน</div>
+                    <div>เมื่อกด Checkout แล้ว ทางระบบจะเก็บข้อมูลโดยอัตโนมัติแบบไม่แจ้งเตือน ท่านสามารถเข้าไปดูประวัติขายสินค้าได้ที่หน้าประวัติ</div>
+                    <div className="divider text-xl"></div>
                     
                 </ul>
             </div>

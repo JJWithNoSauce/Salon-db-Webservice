@@ -19,11 +19,19 @@ import { addEmployee } from "@/app/app"
 
             </div>
             <form action={addEmployee}>
+                <span class="label-text">ชื่อของพนักงาน</span>
+                <br/>
                 <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
+                <br/>
+                <span class="label-text">ที่อยู่ของพนักงาน</span>
                 <br/>
                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full max-w-xs" />
                 <br/>
+                <span class="label-text">E-mail ของพนักงาน</span>
+                <br/>
                 <input type="email" name="email" placeholder="Email" className="input input-bordered w-full max-w-xs" />
+                <br/>
+                <span class="label-text">เบอร์โทรศัพท์ของพนักงาน</span>
                 <br/>
                 <input type="Phone" name="phone" placeholder="Phone" class="input input-bordered w-full max-w-xs" />
                 <br/>
@@ -34,7 +42,7 @@ import { addEmployee } from "@/app/app"
             </form>
 
             <div className="divider">เมื่อกรอกข้อมูลเสร็จสิ้นโปรดกดปุ่ม Confirm เพื่อเพิ่มพนักงาน</div>
-
+            <div>โดยเมื่อกดปุ่มแล้วทางระบบจะนำข้อมูลเข้าโดยอัตโนมัติแบบไม่แจ้งเตือน โปรดกดปุ่มกลับไปยังหน้าจัดการแล้วรีเฟรชหน้าจัดการ (f5) เพื่อเช็คว่าข้อมูลถูกเพิ่มหรือไม่ หากยังไม่ถูกเพิ่มทางระบบอาจกำลังอยู่ในขั้นตอนกระบวนการ หากไม่ถูกเพิ่มเลยโปรดเช็คว่าข้อมูลที่กรอกไปนั้นถูกต้องและไม่ซ้ำกับข้อมูลพนักงานคนไหน</div>
             <div className="divider"></div>
         </div>
     )

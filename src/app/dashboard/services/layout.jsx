@@ -179,9 +179,10 @@ const Layout = ({ children }) => {
                     {cart.map((item) => (
                         <li key={item.product_id}>
                             <div className={style.sumlist}>{amount.service_name}</div>
+                            <div className={style.sumlist}>{"ราคาบริการโดยเฉลี่ย : " + amount.service_avg_price + " บาท"}</div>
                             <div className={style.sumlist}>ช่าง : {item.em_name} </div>
                             
-                            <div className="divider"></div>
+
                         </li>
                     ))}
                     <div className="divider">ข้อมูลการบริการ</div>
@@ -190,14 +191,16 @@ const Layout = ({ children }) => {
                         <br/>
                         <input type="text" name="cus_phone" placeholder="Customer Phone" className="input input-bordered w-full max-w-xs" required/>
                         <br/>
-                        <span class="label-text">ราคาบริการจริง</span>
+                        <span class="label-text">ราคาบริการจริง (บาท)</span>
                         <br/>
                         <input type="number" name="price" placeholder="Summarized Price" className="input input-bordered w-full max-w-xs" required/>
                         <br/>
-                        
+                        <br/>
                         <button className="btn btn-glass">Checkout!</button>
                     </form>
-                    <div className="divider"></div>
+                    <div className="divider ">คำเตือน</div>
+                    <div>เมื่อกด Checkout แล้ว ทางระบบจะเก็บข้อมูลโดยอัตโนมัติแบบไม่แจ้งเตือน ท่านสามารถเข้าไปดูการใช้บริการได้ที่หน้าประวัติ</div>
+                    <div className="divider text-xl"></div>
                     
                 </ul>
             </div>

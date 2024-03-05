@@ -16,6 +16,8 @@ const Layout = ({children}) => {
 
             </div>
             <form action={delEmployee}>
+                <span class="label-text">ชื่อของพนักงาน</span>
+                <br/>
                 <input type="text" name="name" placeholder="Name" class="input input-bordered w-full max-w-xs" />
  
                 <button class="btn glass btn-block text-xl">
@@ -23,8 +25,9 @@ const Layout = ({children}) => {
                 </button>
             </form>
 
-            <div class="divider">โปรดกรอกชื่อสินค้าแล้วกด Confirm เพื่อลบพนักงาน</div>
+            <div class="divider">โปรดกรอกชื่อพนักงานแล้วกด Confirm เพื่อลบพนักงาน</div>
 
+            <div>โดยเมื่อกดปุ่มแล้วทางระบบจะนำข้อมูลนำออกโดยอัตโนมัติแบบไม่แจ้งเตือน โปรดกดปุ่มกลับไปยังหน้าจัดการแล้วรีเฟรชหน้าจัดการ (f5) เพื่อเช็คว่าข้อมูลถูกนำออกหรือไม่ หากยังไม่ถูกนำออกทางระบบอาจกำลังอยู่ในขั้นตอนกระบวนการ หากไม่ถูกนำอกกเลยโปรดเช็คว่าข้อมูลที่กรอกไปนั้นถูกต้องและตรงกับข้อมูลพนักงานที่ต้องการจะนำออก</div>
 
             <div className={style.confirm}>
                 <Link href={"/dashboard/usersMaintain"}>

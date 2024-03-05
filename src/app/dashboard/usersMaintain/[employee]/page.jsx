@@ -59,6 +59,8 @@ const userMaintain = async ({params}) => {
                 <button type="submit" className='btn'>ยืนยันการปรับแต่ง</button>
             </form>   
 
+            <div className="divider ">คำเตือน</div>
+            <div>เมื่อกด Confirm ปรับแต่งแล้ว ทางระบบจะใช้เวลาในการปรับแต่งซักครู่ โปรดกดรีเฟรชหน้าจัดการ (f5) แล้วจึงเช็คว่าข้อมูลของท่านถูกปรับแต่งแล้วหรือยังในแทบรายการพนักงานทางด้านซ้าย</div>
             <div className="divider text-xl"></div>
             
         </div>

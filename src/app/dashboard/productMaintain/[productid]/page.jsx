@@ -47,6 +47,8 @@ const productMaintain = async ({params}) => {
                 <input type="number" name="price" defaultValue={product[0].product_price} className="input input-bordered w-full max-w-xs" required/>
                 <button className="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
+            <div className="divider ">คำเตือน</div>
+            <div>เมื่อกด Confirm ปรับแต่งแล้ว ทางระบบจะใช้เวลาในการปรับแต่งซักครู่ โปรดกดรีเฟรชหน้าจัดการ (f5) แล้วจึงเช็คว่าข้อมูลของท่านถูกปรับแต่งแล้วหรือยังในแทบรายการสินค้าทางด้านซ้าย</div>
             <div className="divider text-xl"></div>
             
             
