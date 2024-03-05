@@ -169,6 +169,27 @@ export async function addService(formData) {
     ssh.close()
 }
 
+export async function editServices(formData) {
+  'use server'
+
+  const service_id = formData.get('id')
+  const service_name = formData.get('name')
+  const service_price = formData.get('price')
+
+  db().then(client => {
+    client.query('UPDATE Service SET service_name = ?, service_avg_price = ? WHERE service_id = ?',
+    [service_name, service_price, service_id], (error, results, fields) => {
+
+        if (error) {
+          console.error('Error inserting data into Product table: ', error);
+          return;
+        }
+        console.log('Data inserted successfully');
+        console.log({service_id,service_name,service_price});
+      });
+  })
+}
+
 export async function delProduct(formData) {
   'use server'
 

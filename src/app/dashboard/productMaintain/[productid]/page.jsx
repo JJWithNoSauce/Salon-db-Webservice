@@ -32,6 +32,7 @@ const productMaintain = async ({params}) => {
                 <input type="number" name="em_Id" placeholder="Employee id" className="input input-bordered w-full max-w-xs" required/>
                 <button className="btn glass btn-block text-xl">Confirm ปรับแต่ง</button> 
             </form>
+            <div className="divider text-xl"></div>
             
             
         </div>
