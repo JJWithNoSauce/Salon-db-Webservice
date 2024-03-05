@@ -1,15 +1,21 @@
-'use client'
-
 import style from './detail.module.css'
 import Link from 'next/link'
+import { addCustomer } from "@/app/app"
 
 export default function detail(){
     
     return(
         <> 
-            <div className={style.container}>
-                <input type="text" placeholder="กรอกเบอร์โทรลูกค้า" className="input input-bordered w-full max-w-xs"/>
+            <div>
+            <form action={addCustomer}>
+                <input name="name" type="text" placeholder="กรอกชื่อ-นามสกุล" className="input input-bordered w-full max-w-xs"/>
+                <br />
                 <input type="text" placeholder="กรอกราคา" className="input input-bordered w-full max-w-xs"/>
+                <br />
+                <button className="btn" type="submit" href={"/dashboard/register/success"}>
+                    ลงทะเบียน
+                </button>
+            </form>
             </div>
             <div className={style.button}>
                 <Link href="/dashboard/services/detail/confirm">

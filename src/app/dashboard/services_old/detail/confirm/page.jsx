@@ -51,3 +51,50 @@ export default function confirm(){
         </>
     )
 }
+
+const billing = async (formData,order,sum)=>{
+    let count = await fetch('http://localhost:3000/api/getCount', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          id:'servicebilling_id',
+          table:'ServiceBilling'
+        })
+      })
+
+    count = await count.json()
+    count = parseInt(count)+1
+    let date = getCurrentDateTime()
+    
+    await fetch('http://localhost:3000/api/buyservice/bill', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          servicebilling_id: count, 
+          cus_phone: formData.get("cus_phone"), 
+          servicebilling_date: date, 
+          em_id: formData.get('em_id') ,
+          ServiceBillingTotalRevenue: sum
+        })
+      });
+
+    order.map(async(cat) =>{
+        await fetch('http://localhost:3000/api/buyservice/order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            servicebilling_id: count, 
+            service_id: cat.service_id, 
+            service_order_revenue: cat.service_price 
+        })
+        });
+
+    })
+    
+}

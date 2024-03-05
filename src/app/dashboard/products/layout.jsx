@@ -68,8 +68,6 @@ const billing = async (formData,order,sum)=>{
 
     })
     
-    
-
 }
 
 
@@ -169,9 +167,6 @@ const Layout = ({ children }) => {
                         <input type="text" name="cus_phone" placeholder="Customer Phone" className="input input-bordered w-full max-w-xs" required/>
                         <br/>
                         <button className="btn">Checkout!</button>
-                        <Link href="/dashboard/register">
-                            <button className="btn">สมัครลูกค้า</button>
-                        </Link>
                     </form>
                     
                 </ul>

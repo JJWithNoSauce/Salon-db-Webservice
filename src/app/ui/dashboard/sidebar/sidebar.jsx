@@ -6,16 +6,16 @@ import style from "./sidebar.module.css"
 import {FaUser,FaBox,FaDatabase,FaBath,FaBarcode,FaClipboardList,FaBook,FaCashRegister} from "react-icons/fa"
 
 const menuItems = [
-    {
+    /*{
         title: "Dashboard",
         path: "/dashboard",
         icon: <FaDatabase />,
-    },
-    {
+    },*/
+    /*{
         title: "Commissions",
         path: "/dashboard/commission",
         icon: <FaCashRegister />,
-    },
+    },*/
     {
         title: "Products",
         path: "/dashboard/products",
@@ -34,6 +34,11 @@ const menuItems = [
     {
         title: "Users",
         path: "/dashboard/users",
+        icon: <FaUser />,
+    },
+    {
+        title: "Customer",
+        path: "/dashboard/register",
         icon: <FaUser />,
     },
 ];
